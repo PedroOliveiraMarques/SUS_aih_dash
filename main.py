@@ -24,7 +24,7 @@ url_conexao = (
     f"mssql+pymssql://{os.getenv('DB_USER')}:{os.getenv('DB_PASS')}"
     f"@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
 )
-engine = create_engine(url_conexao, pool_pre_ping=True)
+engine = create_engine(url_conexao, pool_pre_ping=True) 
 
 query = """
 SELECT TOP 80000
