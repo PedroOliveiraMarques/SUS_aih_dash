@@ -113,14 +113,15 @@ def fmtNum(v):
 # ═══════════════════════════════════════════════
 # 5. APP + INDEX STRING (CSS PREMIUM)
 # ═══════════════════════════════════════════════
-app = dash.Dash(__name__, title="Dashboard SUS · AIH · FUNASA")
+app = dash.Dash(__name__, title="Dashboard SUS · AIH · SUS")
+server = app.server
 
 app.index_string = '''
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     {%metas%}
-    <title>Dashboard SUS · AIH · FUNASA</title>
+    <title>Dashboard SUS · AIH · SUS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
     {%css%}
@@ -758,4 +759,4 @@ def atualizar(regiao, ano, uf, _n):
 # 8. EXECUÇÃO
 # ═══════════════════════════════════════════════
 if __name__ == '__main__':
-    app.run(debug=True, port=8050)
+    app.run(debug=False, host='0.0.0.0', port=int(os.environ.get('PORT', 8050)))
