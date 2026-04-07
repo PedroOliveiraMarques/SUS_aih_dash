@@ -13,7 +13,7 @@ import plotly.graph_objects as go
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
+load_dotenv('senha.env')
 
 print("Iniciando Dashboard FUNASA - AIH...")
 
